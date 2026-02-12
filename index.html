@@ -3,16 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Para Rous 💖</title>
+<title>3 meses contigo, Rous 💖</title>
 <style>
     body {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
         margin: 0;
+        padding: 0;
+        font-family: 'Segoe UI', sans-serif;
         background: linear-gradient(135deg, #ff758c, #ff7eb3);
-        font-family: Arial, sans-serif;
+        overflow-x: hidden;
         text-align: center;
         color: white;
     }
@@ -22,76 +20,208 @@
     }
 
     h1 {
-        font-size: 2rem;
-        margin-bottom: 20px;
+        font-size: 2.2rem;
+        margin-top: 20px;
+        animation: fadeIn 2s ease;
+    }
+
+    h2 {
+        margin-top: 10px;
+        font-weight: normal;
+        animation: fadeIn 3s ease;
+    }
+
+    .card {
+        background: rgba(255,255,255,0.15);
+        border-radius: 20px;
+        padding: 15px;
+        margin: 15px 0;
+        backdrop-filter: blur(5px);
+        animation: float 4s infinite ease-in-out;
     }
 
     button {
         border: none;
         border-radius: 30px;
-        padding: 12px 25px;
+        padding: 12px 24px;
         font-size: 1rem;
-        margin: 10px;
+        margin: 8px;
         cursor: pointer;
         transition: 0.3s;
     }
 
-    #btnSi {
-        background: white;
+    .btn1 {
+        background: #fff;
         color: #ff4d6d;
         font-weight: bold;
-        font-size: 1rem;
     }
 
-    #btnNo {
+    .btn1:hover {
+        transform: scale(1.1);
+    }
+
+    .btn2 {
         background: #ff4d6d;
         color: white;
     }
 
-    #mensajeFinal {
+    .btn2:hover {
+        background: #ff1e4d;
+    }
+
+    #mensajeExtra {
+        margin-top: 15px;
+        font-size: 1.2rem;
+        display: none;
+        animation: fadeIn 1s ease;
+    }
+
+    #sorpresa {
         display: none;
         font-size: 1.5rem;
         margin-top: 20px;
-        animation: aparecer 1s ease;
+        color: #ffe066;
+        animation: zoom 1s ease;
     }
 
-    @keyframes aparecer {
-        from { opacity: 0; transform: scale(0.8); }
-        to { opacity: 1; transform: scale(1); }
+    /* corazones flotando */
+    .heart {
+        position: fixed;
+        bottom: -10px;
+        font-size: 20px;
+        animation: subir 6s linear infinite;
+        opacity: 0.8;
     }
+
+    @keyframes subir {
+        0% { transform: translateY(0); opacity: 1; }
+        100% { transform: translateY(-100vh); opacity: 0; }
+    }
+
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(20px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes zoom {
+        from { transform: scale(0.5); opacity: 0; }
+        to { transform: scale(1); opacity: 1; }
+    }
+
+    @keyframes float {
+        0%,100% { transform: translateY(0); }
+        50% { transform: translateY(-5px); }
+    }
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 12px;
+    margin-top: 20px;
+}
+
+.gallery img {
+    width: 100%;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+    transition: 0.3s;
+}
+
+.gallery img:hover {
+    transform: scale(1.08);
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 12px;
+    margin-top: 20px;
+}
+
+.gallery img {
+    width: 100%;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+    transition: 0.3s;
+}
+
+.gallery img:hover {
+    transform: scale(1.08);
+}
 </style>
 </head>
 <body>
 
 <div class="container">
-    <h1>💖 Rous, mi amor 💖<br>¿Quieres ser mi San Valentín? 🌹</h1>
+    <h1>🌹 3 meses contigo, Rous 💖</h1>
+    <h2>Gracias por hacer mis días más bonitos ✨</h2>
 
-    <button id="btnSi" onclick="respuestaSi()">Sí 💘</button>
-    <button id="btnNo" onclick="respuestaNo()">No 😢</button>
-
-    <div id="mensajeFinal">
-        💖 Rous, gracias por decir que sí 💖<br><br>
-        Eres la persona más especial de mi vida y quiero seguir compartiendo momentos contigo 🌹✨<br><br>
-        Yo sé que ese día la pasaremos muy bonito, mi amor 💕
+    <div class="card">
+        💕 Rous, contigo aprendí que el amor no es perfecto,  
+        pero sí real, sincero y lleno de momentos especiales.
     </div>
+
+    <div class="card">
+        🌙 Cada día a tu lado es una historia que quiero seguir escribiendo contigo.
+    </div>
+
+    <div class="card">
+        💫 Si tuviera que elegir otra vez, volvería a elegirte a ti sin dudarlo.
+    </div>
+
+    <button class="btn1" onclick="mostrarMensaje()">💌 Leer algo especial</button>
+    <button class="btn2" onclick="mostrarSorpresa()">🎁 Ver sorpresa</button>
+
+    <div id="mensajeExtra">
+        Rous, gracias por tu sonrisa, tu paciencia y tu forma tan linda de ser.  
+        Estos 3 meses son solo el comienzo de algo muy bonito 💖
+    </div>
+
+    <div id="sorpresa">
+        💖 Te quiero mucho, Rous 💖<br>
+        ¿Seguimos escribiendo nuestra historia juntos? 🌹
+    </div>
+
+<h2>📸 Nuestros recuerdos juntos 💖</h2>
+
+<div class="gallery">
+    <img src="foto1.jpg">
+    <img src="foto2.jpg">
+    <img src="foto3.jpg">
+    <img src="foto4.jpg">
+    <img src="foto5.jpg">
+    <img src="foto6.jpg">
+</div>
 </div>
 
 <script>
-let tamaño = 1;
-
-function respuestaNo() {
-    tamaño += 0.3;
-    const btnSi = document.getElementById("btnSi");
-    btnSi.style.transform = `scale(${tamaño})`;
+function mostrarMensaje() {
+    document.getElementById("mensajeExtra").style.display = "block";
 }
 
-function respuestaSi() {
-    document.querySelector("h1").style.display = "none";
-    document.getElementById("btnSi").style.display = "none";
-    document.getElementById("btnNo").style.display = "none";
-    document.getElementById("mensajeFinal").style.display = "block";
+function mostrarSorpresa() {
+    document.getElementById("sorpresa").style.display = "block";
 }
+
+// corazones animados
+setInterval(() => {
+    const heart = document.createElement("div");
+    heart.className = "heart";
+    heart.innerHTML = "💖";
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.fontSize = Math.random() * 20 + 15 + "px";
+    document.body.appendChild(heart);
+
+    setTimeout(() => {
+        heart.remove();
+    }, 6000);
+}, 400);
 </script>
 
 </body>
+<!-- Música de fondo -->
+<iframe width="0" height="0" 
+src="https://www.youtube.com/embed/xtilEmxlaNR30xoo?autoplay=1&loop=1&playlist=VIDEO_ID&mute=0" 
+frameborder="0" allow="autoplay"></iframe>
+
 </html>
